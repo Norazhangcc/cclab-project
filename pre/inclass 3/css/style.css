@@ -1,0 +1,44 @@
+html{
+  height: 100px;
+}
+
+body,p,h3{
+  margin: 0;
+}
+
+.box{
+  background-color: green;
+  width:200px;
+  height:180px;
+
+  border-width: 20px;
+  border-color: lightblue;
+  border-style: dotted;
+
+  margin: 50px;
+  padding: 20px;
+}
+
+
+.special-box{
+  background-color: green;
+
+  position: absolute;
+  right: 280px;
+  top: 200px;
+
+  border-width: 20px;
+  border-color: lightblue;
+  border-style: dotted;
+
+  margin: 50px;
+  padding: 20px;
+}
+
+
+.title{
+  background-color: yellow;
+}
+.my-style{
+  background-color: pink;
+}

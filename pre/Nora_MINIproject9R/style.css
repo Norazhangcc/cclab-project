@@ -1,0 +1,51 @@
+html{
+    background-color: rgb(161,202,241);
+}
+
+
+img{
+  position: relative;
+  top: 100px; left: 850px;
+}
+
+.title{
+  font-family: fantasy;
+  font-size: 200px;
+  position: relative;
+  top: 100px; left: 800px;
+}
+
+.bandname{
+  font-family: fantasy;
+  font-size: 140px;
+  position: relative;
+  top: 100px; left: 980px;
+}
+
+.text{
+  font-family: fantasy;
+  font-size: 65px;
+  position: relative;
+  top: 150px; left: 830px;
+}
+
+.link{
+  font-family: fantasy;
+  font-size: 50px;
+  position: relative;
+  top: 70px; left: 1000px;
+}
+
+.t1{
+  font-family: fantasy;
+  font-size: 100px;
+  position: relative;
+  top: 100px; left: 1200px;
+}
+
+.t2{
+  font-family: fantasy;
+  font-size: 50px;
+  position: relative;
+  top: 100px; left: 200px;
+}
