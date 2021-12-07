@@ -11,6 +11,8 @@
 
 let img;
 let output;
+let slider1;
+let slider2;
 
 function preload(){
   img = loadImage('assets/img.jpg');
@@ -21,6 +23,9 @@ function setup() {
   background(255);
 
   output = createImage(img.width, img.height);
+
+  slider1 = createSlider(0,255,70);
+  slider2 = createSlider(0,255,35);
 }
 
 function draw() {
@@ -35,11 +40,12 @@ function draw() {
       let r = img.pixels[index + 0];
       let g = img.pixels[index + 1];
       let b = img.pixels[index + 2];
+      let a = img.pixels[index + 3];
 
-      output.pixels[index + 0] = r * 1.0;
+      output.pixels[index + 0] = r * slider2.value();
       output.pixels[index + 1] = g * 1.0;
       output.pixels[index + 2] = b * 1.0;
-      output.pixels[index + 3] = 255;
+      output.pixels[index + 3] = a * slider1.value();
     }
   }
   output.updatePixels();
