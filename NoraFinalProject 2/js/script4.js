@@ -13,7 +13,7 @@ function setup() {
     rendereffect[i] = new Rendereffect (random(width), random(height));
   }
 
-  slider = createSlider(0, 255, 127);
+  slider = createSlider(0, 255, 70);
   background(220);
 }
 
@@ -65,9 +65,9 @@ function Rendereffect(x, y) {
     let videox = floor(this.x / videosize);
     let videoy = floor(this.y / videosize);
     let videocolor = video.get(videox, videoy);
-    console.log(videocolor);
+    //console.log(videocolor);
     noStroke();
-    fill(videocolor[0], videocolor[1], videocolor[2], slider.value() );
-    ellipse(this.x, this.y, this.r, this.r-5);
+    fill(videocolor[0], videocolor[1], videocolor[2], slider.value());
+    circle(this.x, this.y, this.r)
   };
 }
