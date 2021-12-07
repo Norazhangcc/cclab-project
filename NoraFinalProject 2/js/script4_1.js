@@ -2,6 +2,9 @@ let video;
 let vScale = 16;
 let particles = [];
 let slider;
+let button;
+let snapshots = [];
+
 
 function setup() {
   createCanvas(640, 480);
@@ -14,7 +17,18 @@ function setup() {
   }
   slider = createSlider(0, 255, 127);
   background(51);
+
+
+   button = createButton('snap');
+   button.mousePressed(takesnap);
 }
+
+
+function takesnap(){
+  //image(video, 0, 0);
+  snapshots.push(video.get());
+}
+
 
 function draw() {
   //background(51);
@@ -24,6 +38,23 @@ function draw() {
     particles[i].update();
     particles[i].show();
   }
+
+
+    let w = 80;
+   let h = 60;
+   let x = 0;
+   let y = 0;
+
+   for(let i = 0; i <  snapshots.length; i++){
+     tint(255,50);
+     image(snapshots[i], x, y, w, h);
+     x = x + w;
+     if (x > width){
+         x = 0;
+         y =y + h;
+         }
+
+   }
 }
 
 function Particle(x,y){

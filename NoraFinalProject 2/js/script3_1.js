@@ -6,9 +6,6 @@
 4. upload images? "ASYNC in JS"
 5. combine with already uploaded images
 */
-
-
-
 let img;
 let output;
 let slider1;
