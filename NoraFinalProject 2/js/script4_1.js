@@ -11,6 +11,7 @@ function setup() {
   pixelDensity(1);
   video = createCapture(VIDEO);
   video.size(width/vScale, height/vScale);
+  video.hide();
 
   for (let i = 0; i < 100; i++) {
      particles[i] = new Particle (random(width),random(height));
@@ -46,7 +47,7 @@ function draw() {
    let y = 0;
 
    for(let i = 0; i <  snapshots.length; i++){
-     tint(255,50);
+     tint(255,100);
      image(snapshots[i], x, y, w, h);
      x = x + w;
      if (x > width){
@@ -64,11 +65,8 @@ function Particle(x,y){
   this.r = random(4,32);
 
   this.update = function() {
-    this.x += random(-10,10);
-    this.y += random(-10,10);
-
-    this.x = constrain(this.x, 0, width);
-    this.y = constrain(this.y, 0, height);
+    this.x += random(-20,20);
+    this.y += random(-20,20);
   }
 
   this.show = function() {

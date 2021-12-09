@@ -15,7 +15,7 @@ function setup() {
     rendereffect[i] = new Rendereffect (random(width), random(height));
   }
 
-  slider = createSlider(0, 255, 70);
+  slider = createSlider(0, 80, 45);
   background(220);
 
 
@@ -47,9 +47,9 @@ function draw() {
       let b = video.pixels[index + 2];
 
       if (x < video.width) {
-        video.pixels[index + 0] = r * 5; // R
-        video.pixels[index + 1] = g * 10; // G
-        video.pixels[index + 2] = b * 18; // B
+        video.pixels[index + 0] = r * 1.2; // R
+        video.pixels[index + 1] = g * 1.3; // G
+        video.pixels[index + 2] = b * 3; // B
         video.pixels[index + 3] = slider.value(); //A
       }
     }
@@ -84,8 +84,8 @@ function Rendereffect(x, y) {
   this.r = random(15, 35);
 
   this.update = function () {
-    this.x += random(-20, 20);
-    this.y += random(-20, 20);
+    this.x += random(-25, 25);
+    this.y += random(-25, 25);
   };
 
   this.show = function () {

@@ -21,8 +21,8 @@ function setup() {
 
   output = createImage(img.width, img.height);
 
-  slider1 = createSlider(0,255,70);
-  slider2 = createSlider(0,255,35);
+  slider1 = createSlider(0,20,1.2);
+  slider2 = createSlider(0,20,8);
 }
 
 function draw() {
@@ -37,12 +37,16 @@ function draw() {
       let r = img.pixels[index + 0];
       let g = img.pixels[index + 1];
       let b = img.pixels[index + 2];
-      let a = img.pixels[index + 3];
+      let a = img.pixels[index + 3] * random(5,10);
 
-      output.pixels[index + 0] = r * slider2.value();
-      output.pixels[index + 1] = g * 1.0;
-      output.pixels[index + 2] = b * 1.0;
-      output.pixels[index + 3] = a * slider1.value();
+      let brightness = (r + g + b)/3;
+      let s = map(brightness, 0, 255, 0, 16);
+
+      output.pixels[index + 0] = r * s;
+      output.pixels[index + 1] = g * slider1.value();
+      output.pixels[index + 2] = b * slider2.value();
+      output.pixels[index + 3] = a;
+
     }
   }
   output.updatePixels();
